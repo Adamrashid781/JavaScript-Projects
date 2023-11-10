@@ -1,4 +1,16 @@
 
-.body {
-    background-color: aqua;
+body {
+    background-color: rgb(189, 114, 114);
+}
+
+
+
+input[type=text]{
+    background-color: #3cbc8d;
+    color: white;
+}
+
+input[type=submit]{
+    background-color: black;
+    color: blanchedalmond;
 }
