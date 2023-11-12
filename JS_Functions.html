@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrow function</title>
+    </head>
+    <body>
+        <script>
+            let car ;
+            my_function = (car) => document.write(car + " is my favorite car manufacturer");
+
+            let ages = [20, 30, 55, 18, 12, 23];
+            // Using the arrow function to pass in a parameter of age 
+            // Will state TRUE/FALSE
+            checkAge = (age) => age >= 55 ;
+
+            function myFunction() {
+                // Use the .some() to iterate through the array of ages and display the result.
+                document.getElementById('displayAge').innerHTML = ages.some(checkAge);
+            }
+        </script>
+
+        <button onclick="my_function('Porsche')">Click me</button>
+
+        <br>
+        <p id="displayAge">Data will go here</p>
+        <button onclick="myFunction()">Click to see if data in the array meets the criteria</button>
+
+    </body>
+
+</html>
