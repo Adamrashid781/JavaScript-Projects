@@ -197,50 +197,54 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
             // this method draws everything we laid out above
             c.stroke();
             // this condition checks if we've reached the endpoints.
-            if(x1 <= x2 && y1 >= y2){
+            if(x1 <= x2 && y1 <= y2){
                 // this condition adds 10 to the previous end X endpoint
                 if (x < x2) {x += 10 ;}
                 // This condition adds 10 to the previous end Y endpoint
-                if (y > y2) {y -= 10; }
+                if (y < y2) {y += 10; }
                 // this condition is similar to the one above.
                 // its necessary for the 6, 4, 2 win conditions
-                if (x >= x2 && y <= y2) {cancelAnimationFrame(animationLoop); }
+                if (x >= x2 && y >= y2) {cancelAnimationFrame(animationLoop); }
             }
-
-            // this function clears our canvas after our win line is drawn
-            function clear() {
-                // this line starts our animation loop.
-                const animationLoop = requestAnimationFrame(clear);
-                // This line clears our canvas.
-                c.clearRect(0, 0, 608, 608);
-                // this line stops our animation loop.
-                cancelAnimationFrame(animationLoop);
+            // This condition is similar to the one above.
+            // This  is necessary for the 6, 4, 2 win condition.
+            if (x1 <= x2 && y1 > y2) {
+                if(x < x2) {x += 10;}
+                if(y > y2) {y -= 10;}
+                if(x >= x2 && y <= y2) { cancelAnimationFrame(animationLoop);}
             }
-            // This line disallows clicking while the win sound is playing
-            disableClick();
-            // this line plays the win sounds.
-            audio('./media/winGame.mp3');
-            // this line calls our main animation loop
-            animateLineDrawing();
-            // This line waits 1 second. Then, clears canvas, resets game, and allows clicking again.
-            setTimeout(function () {clear(); 
-                resetGame();
-            }, 1000) ;
         }
 
-    function resetGame() {
-        // this for loop iterates through each HTML square element 
-        for(let i = 0; i < 9; i++){
-            // this variable gets the HTML element i.
-            let square = document.getElementById(String(i));
-            // This removes our elements backgroundImage.
-            square.style.backgroundImage = '';
+        // this function clears our canvas after our win line is drawn
+        function clear() {
+            // this line starts our animation loop.
+            const animationLoop = requestAnimationFrame(clear);
+            // This line clears our canvas.
+            c.clearRect(0, 0, 608, 608);
+            // this line stops our animation loop.
+            cancelAnimationFrame(animationLoop);
         }
-        // this resets our array so it is empty and we can start over.
-        selectedSquares = [] ;
+        // This line disallows clicking while the win sound is playing
+        disableClick();
+        // this line plays the win sounds.
+        audio('./media/winGame.mp3');
+        // this line calls our main animation loop
+        animateLineDrawing();
+        // This line waits 1 second. Then, clears canvas, resets game, and allows clicking again.
+        setTimeout(function () {clear(); 
+            resetGame();
+        }, 1000) ;
+    
+
+}
+function resetGame() {
+    // this for loop iterates through each HTML square element 
+    for(let i = 0; i < 9; i++){
+        // this variable gets the HTML element i.
+        let square = document.getElementById(String(i));
+        // This removes our elements backgroundImage.
+        square.style.backgroundImage = '';
     }
-
-
-
-
+    // this resets our array so it is empty and we can start over.
+    selectedSquares = [] ;
 }
