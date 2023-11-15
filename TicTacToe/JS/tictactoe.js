@@ -81,7 +81,7 @@ function placeXorO(sqaureNumber) {
 function checkWinConditions() {
     // ------------------- x CONDITIONS -----------------------------------------
     // X 0, 1, 2 condition 
-    if (arrayIncludes('0X', '1X', '2x')) { drawWinLine(50, 100, 558, 100)}
+    if (arrayIncludes('0X', '1X', '2X')) { drawWinLine(50, 100, 558, 100)}
     // X 3, 4, 5 condition 
     else if (arrayIncludes('3X', '4X', '5X')) { drawWinLine(50, 304, 558, 304)}
     // X 6, 7, 8 condition
@@ -108,7 +108,7 @@ function checkWinConditions() {
     else if (arrayIncludes('6O', '7O', '8O')) { drawWinLine(50, 508, 558, 508)}
 
     // O 0, 3, 6 conditions
-    else if (arrayIncludes('0X', '3X', '6O')) { drawWinLine(100, 50, 100, 558)}
+    else if (arrayIncludes('0O', '3O', '6O')) { drawWinLine(100, 50, 100, 558)}
     // O 1, 4, 7 conditions 
     else if (arrayIncludes('1O', '4O', '7O')) { drawWinLine(304, 50, 304, 558)}
     // O 2, 4, 8 conditions
