@@ -193,21 +193,21 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
             // this method sets the width of our line.
             c.lineWidth = 10 ;
             // this method sets the color of our line.
-            c.strokeStyle = rgba(70, 225, 33, .8) ;
+            c.strokeStyle = "rgba(70, 225, 33, .8)" ;
             // this method draws everything we laid out above
             c.stroke();
             // this condition checks if we've reached the endpoints.
             if(x1 <= x2 && y1 <= y2){
                 // this condition adds 10 to the previous end X endpoint
-                if (x < x2) {x += 10 ;}
+                if (x < x2) {x += 10 ; }
                 // This condition adds 10 to the previous end Y endpoint
-                if (y < y2) {y += 10; }
-                // this condition is similar to the one above.
+                if (y < y2) {y += 10 ; }
+                // this condition is similar to the one above. 
                 // its necessary for the 6, 4, 2 win conditions
                 if (x >= x2 && y >= y2) {cancelAnimationFrame(animationLoop); }
             }
-            // This condition is similar to the one above.
-            // This  is necessary for the 6, 4, 2 win condition.
+            // This condition is similar to the one above. 
+            // This  is necessary for the 6, 4, 2 win condition. 
             if (x1 <= x2 && y1 > y2) {
                 if(x < x2) {x += 10;}
                 if(y > y2) {y -= 10;}
