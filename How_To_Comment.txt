@@ -1,0 +1,31 @@
+
+HTML    <!-- Text here -->
+
+CSS     /* Text here  */
+
+JavaScript  /* Text here */     &       // 
+
+Link to all CSS Properties
+https://www.w3schools.com/cssref/index.php
+
+
+
+Link to Favicons 
+1. https://www.favicon-generator.org
+2. https://favicon.io/emoji-favicons/
+3. https://www.ionos.com/tools/favicon-generator
+
+    best one
+4. https://icons8.com/icons
+
+
+
+
+Links to websites for good code
+1. https://www.w3schools.com/howto/howto_css_team.asp
+2. https://getbootstrap.com/docs/5.3/getting-started/introduction/
+3. https://getbootstrap.com/docs/4.1/getting-started/introduction/
+
+
+Font websites 
+1. https://www.w3.org/Style/Examples/007/fonts.en.html
