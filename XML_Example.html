@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>XML Example</title>
+    </head>
+
+    <body>
+        <p id="XML_Example">Info will go here</p>
+        <script>
+            var XML_parser, XML_Document;
+
+            // creates a text string 
+            var movie = "<movie>" +
+                        "<title>Transformers: Revenge of the Fallen</title>" +
+                        "<director>Micheal Bay</director>" +
+                        "<starring>Shia LaBeouf</starring>" +
+                        "<year>2009</year>" +
+                        "</movie>" ;
+
+            // creates an XML DOM parser
+            XML_parser = new DOMParser() ;
+
+            //creates a new XML DOM object using the text string
+            XML_Document = XML_parser.parseFromString(movie, "text/xml");
+
+            document.getElementById("XML_Example").innerHTML = 
+            XML_Document.getElementsByTagName("director")[0].childNodes[0].nodeValue ;
+
+        </script>
+    </body>
+</html>
