@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title> Write title here.</title>
+        <meta charset="utf-8">
+        <!-- JavaScript JQuery library -->
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <!-- These two lones below are the hard copy files of REACT, online links are better and will be below -->
+        <script src="react.js"></script>
+        <script src="react-dom.js"></script>
+
+        <!-- Online links to REACT library -->
+        <script src="https://odnjs.cloudflare.com/ajax/libs/react/0.14.3//react.js"></script>
+        <script src="https://odnjs.cloudflare.com/ajax/libs/react/0.14.3//react-dom.js"></script>
+    </head>
+    <body>
+        <div id="My_React_Code"></div>
+        <script>
+            var counter = React.createClass({
+                render: function() {
+                    var time_Passed = Math.round(this.props.time_Passed / 100);
+                    var seconds_Passed = time_Passed / 10 + (time_Passed % 10 ? '' : '.0');
+                    var text = 'My React code started running ' +
+                    seconds_Passed + ' seconds ago!' ;
+                    return React.DOM.p(null, text);
+                }
+            }) ;
+            var counter_Factory = React.createFactory(counter) ;
+
+            var start_counting = new Date().getTime() ;
+            setInterval(function() {
+                ReactDOM.render(
+                    counter_Factory({time_Passed: new Date().getTime() - start_counting}),
+                    document.getElementById('My_React_Code')
+                );
+            }, 50);
+            /* 
+                This is all JavaScript! And remember, that’s what React is. We are calling built in React methods and functions.
+
+
+                me of the code above is React-specific, including:
+
+
+                React.createClass – creates component classes
+
+                ReactDOM.render() – used to render a React Component or Components
+
+                React.createFactory – a function that generates a factory (object that can create other objects)
+
+                is also some vanilla JavaScript code we used within this, including:
+
+
+                ? – a conditional operator that checks for whether or not a condition is true, the : following it is shorthand for “else”
+
+                % – finds the remainder
+
+                setInterval() – a method that evaluates an expression at specified intervals (milliseconds)
+
+                Using the above React code, we created a timer that counts upward.
+            */
+            
+
+        </script>
+    </body>
+</html>
