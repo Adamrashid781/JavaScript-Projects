@@ -4,17 +4,15 @@
     <head>
         <title> Write title here.</title>
         <meta charset="utf-8">
-        <!-- JavaScript JQuery library -->
-        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-
+        
         <!-- Online links to REACT library -->
-        <script src="https://odnjs.cloudflare.com/ajax/libs/react/0.14.3//react.js"></script>
-        <script src="https://odnjs.cloudflare.com/ajax/libs/react/0.14.3//react-dom.js"></script>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
         
     </head>
     <body>
         <script>
-            const x = React.createElement;
+            const X = React.createElement;
             class likeButton extends React.Component {
                 // 'props' is short for 'properties'
                 constructor(props) {
@@ -28,7 +26,7 @@
                         return 'You Clicked the like button!';
                     }
 
-                    return x (
+                    return X(
                         'button',     // “setstate” schedules a UI update
                         { onclick: () => this.setState({ liked: true}) },
                         'like'
@@ -37,11 +35,11 @@
             }
 
             const domContainer = document.querySelector('#like_button_container');
-            ReactDOM.render(x(likeButton), domContainer );
+            ReactDOM.render(X(likeButton), domContainer );
 
         </script>
 
-
+        <div id="like_button_container"></div>
 
 
     </body>
